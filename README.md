@@ -8,7 +8,7 @@ Maker Media GmbH
 
 Die LED-Wasserwaage aus Make 4/25 hat leider einen Bug: Waagerecht funktioniert sie zuverlässig, doch lotrecht zeigt sie konsequent etwa 5 Grad daneben. Diesen Fehler habe ich behoben und die Waage bei der Gelegenheit grundlegend umgebaut. Herausgekommen sind eine zuverlässigere, leichtere Wasserwaage.
 
-![Aufmacherbild aus dem Heft](./doc/Aufmacher.JPG)
+[!https://github.com/MakeMagazinDE/LED-Waage2.0/blob/main/Volle%20breite_niwe.png]
 
 ## Wer den Aufmacher skalieren muss:
 <img src="./doc/Aufmacher.JPG" width="50%" height="50%">
