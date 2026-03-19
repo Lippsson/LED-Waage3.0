@@ -11,3 +11,5 @@ Die LED-Wasserwaage aus Make 4/25 hat leider einen Bug: Waagerecht funktioniert 
 ![Picture](https://github.com/MakeMagazinDE/LED-Waage2.0/blob/main/Volle%20breite_niwe.png)
 
 Der vollständige Artikel zum Projekt steht in der **Make 2/26 ab Seite 116**.
+
+![Picture](https://github.com/MakeMagazinDE/LED-Waage2.0/blob/main/LED-Wasserwaage-Schaltung-2.0.png)
