@@ -22,7 +22,8 @@ Digitale LED-Wasserwaage mit ESP32, MPU6050 und zwei Streifen WS2812-LEDs, jetzt
 - Anpassung an **2 × 44 LEDs** (88 insgesamt), Libelle mit Torpfosten in der Mitte.
 - Libelle **weiß** bei waagerecht, **blau** bei senkrecht. Die zwei Pfosten leuchten **grün** (exakt im Zentrum), **gelb** (eine LED daneben) oder **rot**.
 - **Akkuanzeige** nur auf den zwei äußersten LEDs: 0–10 % rot blinkend, 10–20 % rot, 20–40 % gelb, 40–60 % orange, 60–100 % grün.
-- Der Schlafmodus ist abgeschaltet, die 45°-Anzeige wurde entfernt: angezeigt werden nur waagerecht und senkrecht.
+- Der Schlafmodus ist abgeschaltet und wurde durch einen Schalter zum trennen der Batterie-plusleitung ersetzt.
+- Die 45°-Anzeige wurde entfernt: angezeigt werden nur waagerecht und senkrecht.
 - **Bluetooth Low Energy:** Live-Daten (Beschleunigung, Gyro, Neigung), Fernsteuerung der Kalibrierung, Einstellungen lesen und schreiben.
 - Alle wichtigen Werte sind **zur Laufzeit einstellbar und im Flash gespeichert**: Glättung, Messrate, Libellen-Größe, Helligkeit, Signalton, Wartezeit der Kalibrierung, Rundung, Filter des Sensors.
 - **Sensor-Montage einstellbar:** Achsen vertauschen und umkehren, falls der Sensor anders eingebaut ist.
