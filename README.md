@@ -52,7 +52,13 @@ Getestet mit einem **LOLIN32 Lite**. Pinbelegung wie im Sketch:
 | I2C SDA / SCL (MPU6050 und OLED) | GPIO 15 / GPIO 4 |
 
 MPU6050 hat die I2C-Adresse `0x68`, das OLED `0x3C` oder `0x3D`. Beide hängen am selben Bus (3,3 V).
-Den Schaltplan und die Hardware-Änderungen für den Betrieb findest du im Artikel der Make 2/26 und im Original-Repository.
+**Schaltplan** (der Fritzing-Plan der Make-Wasserwaage 2.0, ergänzt um einen Kasten für das OLED-Display):
+
+![Schaltplan der LED-Waage mit OLED SH1106](LED-Wasserwaage-Schaltung-3.0.png)
+
+Das Display hängt parallel zum MPU6050 am selben I2C-Bus (SDA an GPIO 15, SCL an GPIO 4, 3,3 V und GND). Es braucht keinen eigenen Pin.
+Der ursprüngliche Plan ohne Display liegt unverändert als LED-Wasserwaage-Schaltung-2.0.png im Hauptordner, er stammt vom Make Magazin.
+Die Hardware-Änderungen für den Betrieb stehen im Artikel der Make 2/26 und im [Original-Repository](https://github.com/MakeMagazinDE/LED-Waage2.0).
 
 ## Firmware flashen
 
