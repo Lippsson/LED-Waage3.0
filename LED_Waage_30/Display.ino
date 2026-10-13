@@ -149,3 +149,10 @@ void oledService(unsigned long now) {
   else memset(oledBuf, 0, sizeof(oledBuf));
   oledPage = 0;
 }
+
+// Switch the display (and its DC-DC converter) off, e.g. before deep sleep.
+void oledOff() {
+  if (!oledAddr) return;
+  static const uint8_t off[] = { 0xAE, 0xAD, 0x8A };   // display off, SH1106 DC-DC off
+  oledCommands(off, sizeof(off));
+}

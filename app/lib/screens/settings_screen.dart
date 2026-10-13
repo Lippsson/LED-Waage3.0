@@ -33,6 +33,7 @@ const settingInfo = <String, SettingInfo>{
   'travel': SettingInfo('g_bubble', 'LED'),
   'fadeMs': SettingInfo('g_bubble', 'ms'),
   'holdLevel': SettingInfo('g_bubble', 'ms'),
+  'sleepMin': SettingInfo('g_device', 'min'),
   'bright': SettingInfo('g_device'),
   'sound': SettingInfo('g_device'),
 };

@@ -24,6 +24,7 @@ Digitale LED-Wasserwaage mit ESP32, MPU6050 und zwei Streifen WS2812-LEDs, jetzt
 - **Akkuanzeige** nur auf den zwei äußersten LEDs: 0–10 % rot blinkend, 10–20 % rot, 20–40 % gelb, 40–60 % orange, 60–100 % grün.
 - Der Schlafmodus ist abgeschaltet und wurde durch einen Schalter zum trennen der Batterie-plusleitung ersetzt.
 - Die 45°-Anzeige wurde entfernt: angezeigt werden nur waagerecht und senkrecht.
+- **Optional: automatisches Ausschalten** (Tiefschlaf) nach einstellbaren Minuten ohne Bewegung, in der App unter *Einstellungen → Gerät* (Standard: aus, dann bleibt alles wie oben). Die Waage schläft nur, wenn **keine App verbunden** ist, das OLED wird vorher abgeschaltet. Zum Aufwecken die Waage bewegen (Bewegungs-Interrupt des MPU6050 an GPIO 13, Schwelle etwa 0,5 g).
 - **Bluetooth Low Energy:** Live-Daten (Beschleunigung, Gyro, Neigung), Fernsteuerung der Kalibrierung, Einstellungen lesen und schreiben.
 - Alle wichtigen Werte sind **zur Laufzeit einstellbar und im Flash gespeichert**: Glättung, Messrate, Libellen-Größe, Helligkeit, Signalton, Wartezeit der Kalibrierung, Rundung, Filter des Sensors.
 - **Sensor-Montage einstellbar:** Achsen vertauschen und umkehren, falls der Sensor anders eingebaut ist.

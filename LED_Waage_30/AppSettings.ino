@@ -24,6 +24,7 @@ Setting settingsTable[] = {
   // hardware
   { "bright",    'i', &LED_BRIGHTNESS,        5,    255,    255     },
   { "sound",     'i', &SOUND_ENABLED,         0,      1,      1     },
+  { "sleepMin",  'i', &AUTO_OFF_MIN,           0,     60,      0     },
   { "calWait",   'i', &CAL_WAIT_MS,        2000,  30000,   5000     },
   // sensor mounting
   { "axes",      'i', &AXIS_PERM,               0,      5,      0     },

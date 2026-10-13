@@ -12,6 +12,12 @@
 #include <Preferences.h>
 #include "AppSettings.h"
 
+#include <Wire.h>
+#include <Adafruit_NeoPixel.h>
+#include <MPU6050_tockn.h>
+#include <Preferences.h>
+#include "AppSettings.h"
+
 // Pins
 #define LED_LEFT_PIN   5
 #define LED_RIGHT_PIN  18
@@ -43,7 +49,6 @@ bool calUseNext = false;            // true while a calibration started from the
 #define WHITE_ZONE_EXIT  0.10
 #define MAX_ANGLE       45.0
 #define PRINT_THRESHOLD 0.3
-#define INACTIVITY_TIMEOUT 30000
 
 // Runtime-tunable values (changeable from the phone app, persisted in NVS).
 // Defaults, limits and key names live in the table in Settings.ino.
@@ -72,6 +77,7 @@ int   AXIS_INV_Z        = 0;
 
 int   MPU_DLPF          = 3;     // sensor low-pass filter: 0 off(260Hz) 1 184 2 94 3 44 4 21 5 10 6 5 Hz
 volatile bool reqMpuFilter = true;   // apply the filter setting from loop() (never from the BLE task)
+int   AUTO_OFF_MIN       = 0;     // deep sleep after this many minutes without movement and without app; 0 = never
 int   ANGLE_ROUND       = 0;     // rounding of the displayed calibrated tilt: 0 none, 1 = 0.05 deg, 2 = 0.1 deg
 
 #define BATTERY_FULL_ADC   4050
@@ -536,10 +542,11 @@ void loopLevel(unsigned long currentMillis, float accelX, float accelY, float ac
     Serial.print("  battery:    "); Serial.println(readBatteryADC());
   }
 
-  // Deep sleep disabled
-  // if (currentMillis - lastMovementTime > INACTIVITY_TIMEOUT) {
-  //   enterDeepSleep();
-  // }
+  // Auto power-off: only without a connected app, so a session in the app is never cut off.
+  if (bleConnected) lastMovementTime = currentMillis;
+  if (AUTO_OFF_MIN > 0 && currentMillis - lastMovementTime > (unsigned long)AUTO_OFF_MIN * 60000UL) {
+    enterDeepSleep();
+  }
 
   if (currentMillis - lastUpdateTime >= updateInterval) {
     lastUpdateTime = currentMillis;
@@ -1005,6 +1012,8 @@ void enterDeepSleep() {
   stripRight.setBrightness(255);
   stripLeft.show();
   stripRight.show();
+
+  oledOff();   // the OLED keeps its 3.3 V supply in deep sleep, switch it off first
 
   // Cut GND to LED strips via BC337 — eliminates ~56mA quiescent draw
   digitalWrite(LED_POWER_PIN, LOW);

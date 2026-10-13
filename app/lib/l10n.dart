@@ -54,6 +54,8 @@ String trCalError(String reason) {
 
 const _strings = <String, Map<String, String>>{
   'de': {
+    's_sleepMin': 'Automatisch ausschalten',
+    'h_sleepMin': 'Minuten ohne Bewegung, danach geht die Waage schlafen (0 = nie). Nur wenn keine App verbunden ist. Zum Aufwecken die Waage bewegen.',
     'about_contact_title': 'Kontakt / Impressum',
     'about_contact': 'Private Hobby-App. Kontakt und Rückfragen bitte über das GitHub-Projekt:',
     'about_origin_title': 'Herkunft',
@@ -221,6 +223,8 @@ const _strings = <String, Map<String, String>>{
     'h_sound': '0 = aus, 1 = an',
   },
   'en': {
+    's_sleepMin': 'Automatic power-off',
+    'h_sleepMin': 'Minutes without movement before the level goes to sleep (0 = never). Only while no app is connected. Move the level to wake it up.',
     'about_contact_title': 'Contact / legal notice',
     'about_contact': 'Private hobby app. For contact and questions please use the GitHub project:',
     'about_origin_title': 'Origin',
@@ -388,6 +392,8 @@ const _strings = <String, Map<String, String>>{
     'h_sound': '0 = off, 1 = on',
   },
   'sv': {
+    's_sleepMin': 'Automatisk avstängning',
+    'h_sleepMin': 'Minuter utan rörelse innan vattenpasset går i viloläge (0 = aldrig). Bara när ingen app är ansluten. Rör vattenpasset för att väcka det.',
     'about_contact_title': 'Kontakt / juridisk information',
     'about_contact': 'Privat hobbyapp. För kontakt och frågor, använd GitHub-projektet:',
     'about_origin_title': 'Ursprung',

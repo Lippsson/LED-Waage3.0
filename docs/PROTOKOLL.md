@@ -62,6 +62,7 @@ Die Liste wird von der Waage selbst geliefert, die App baut ihre Oberfläche dar
 | `holdLevel` | i | 0 … 5000 | 1000 | Haltezeit „eingerastet“ (ms) |
 | `bright` | i | 5 … 255 | 255 | LED-Helligkeit |
 | `sound` | i | 0 … 1 | 1 | Signalton |
+| `sleepMin` | i | 0 … 60 | 0 | Automatisch ausschalten nach so vielen Minuten ohne Bewegung, 0 = nie. Nur ohne verbundene App |
 | `calWait` | i | 2000 … 30000 | 5000 | Wartezeit pro Kalibrierschritt (ms) |
 | `axes` | i | 0 … 5 | 0 | Achsen-Zuordnung: 0 XYZ, 1 XZY, 2 YXZ, 3 YZX, 4 ZXY, 5 ZYX |
 | `invX`, `invY`, `invZ` | i | 0 … 1 | 0 | Achse umkehren |
