@@ -1,0 +1,6 @@
+﻿# Arduino / build output
+*.bin
+*.elf
+build/
+.DS_Store
+Thumbs.db
